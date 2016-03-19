@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--LoginVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginVC" customModule="designCode" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,128 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coding" translatesAutoresizingMaskIntoConstraints="NO" id="b6j-gr-yoH">
+                                <rect key="frame" x="180" y="8" width="240" height="247"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="L2s-mv-vre"/>
+                                    <constraint firstAttribute="height" constant="247" id="zcy-yV-G38"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t11-6f-AJb" customClass="CustomTextField" customModule="designCode" customModuleProvider="target">
+                                <rect key="frame" x="154" y="285" width="293" height="30"/>
+                                <color key="backgroundColor" red="0.90196078431372551" green="0.90196078431372551" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="EG0-cu-d6C"/>
+                                    <constraint firstAttribute="height" constant="30" id="h6O-Rd-JuJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cxS-X9-y6b" customClass="CustomTextField" customModule="designCode" customModuleProvider="target">
+                                <rect key="frame" x="154" y="342" width="293" height="30"/>
+                                <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="fiT-KZ-DEo"/>
+                                    <constraint firstAttribute="height" constant="30" id="zsO-4b-AnB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="inset">
+                                        <real key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Dribbble Circle" translatesAutoresizingMaskIntoConstraints="NO" id="Prp-O3-oi0">
+                                <rect key="frame" x="280" y="441" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="jcJ-UT-dqe"/>
+                                    <constraint firstAttribute="height" constant="40" id="pmE-YD-7f4"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Twitter Circle" translatesAutoresizingMaskIntoConstraints="NO" id="KAA-FM-7ON">
+                                <rect key="frame" x="407" y="441" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="DoK-pj-d2H"/>
+                                    <constraint firstAttribute="height" constant="40" id="TJP-hh-CuN"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch0-S8-J7b">
+                                <rect key="frame" x="415" y="449" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Deu-UF-fVK"/>
+                                    <constraint firstAttribute="height" constant="24" id="f8F-C5-hNm"/>
+                                </constraints>
+                                <state key="normal" image="Twitter"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOA-Wh-7Rh">
+                                <rect key="frame" x="154" y="441" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="0HU-GZ-tL1"/>
+                                    <constraint firstAttribute="width" constant="40" id="URD-rh-dxu"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="Facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04S-zd-CCz" customClass="CustomButton" customModule="designCode" customModuleProvider="target">
+                                <rect key="frame" x="224" y="391" width="147" height="32"/>
+                                <color key="backgroundColor" red="0.99607843137254903" green="0.30588235294117649" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="147" id="9J9-EW-gKq"/>
+                                    <constraint firstAttribute="height" constant="32" id="OIF-7O-aSo"/>
+                                </constraints>
+                                <state key="normal" title="Login"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="fontColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u5I-F1-awW">
+                                <rect key="frame" x="285" y="446" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="fWt-KS-T3b"/>
+                                    <constraint firstAttribute="height" constant="30" id="mTt-de-4vL"/>
+                                </constraints>
+                                <state key="normal" image="Dribbble"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="t11-6f-AJb" firstAttribute="top" secondItem="b6j-gr-yoH" secondAttribute="bottom" constant="30" id="8XZ-zR-orB"/>
+                            <constraint firstItem="cxS-X9-y6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVi-Ot-RqU"/>
+                            <constraint firstItem="b6j-gr-yoH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="8" id="M8x-dZ-RJf"/>
+                            <constraint firstItem="04S-zd-CCz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCV-YH-k7S"/>
+                            <constraint firstItem="04S-zd-CCz" firstAttribute="top" secondItem="cxS-X9-y6b" secondAttribute="bottom" constant="19" id="SEx-Ay-trh"/>
+                            <constraint firstItem="Ch0-S8-J7b" firstAttribute="centerY" secondItem="KAA-FM-7ON" secondAttribute="centerY" id="YoN-Qv-Nvh"/>
+                            <constraint firstItem="Ch0-S8-J7b" firstAttribute="centerX" secondItem="KAA-FM-7ON" secondAttribute="centerX" id="cas-fw-Cx2"/>
+                            <constraint firstItem="t11-6f-AJb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="flT-iP-WyY"/>
+                            <constraint firstItem="b6j-gr-yoH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kb7-eU-Cgv"/>
+                            <constraint firstItem="cxS-X9-y6b" firstAttribute="top" secondItem="t11-6f-AJb" secondAttribute="bottom" constant="27" id="vjo-2U-vfL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailConstraint" destination="flT-iP-WyY" id="yvr-lj-f9S"/>
+                        <outlet property="loginBtnConstraint" destination="MCV-YH-k7S" id="z49-eD-Etk"/>
+                        <outlet property="passwordConstraint" destination="KVi-Ot-RqU" id="eQ7-HR-fTj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="540" y="247"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Dribbble" width="37" height="38"/>
+        <image name="Dribbble Circle" width="77" height="77"/>
+        <image name="Facebook" width="77" height="77"/>
+        <image name="Twitter" width="38" height="32"/>
+        <image name="Twitter Circle" width="77" height="77"/>
+        <image name="coding" width="400" height="400"/>
+    </resources>
 </document>
