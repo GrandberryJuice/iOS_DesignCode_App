@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BC69AD7AAAE65B82710AD566 /* Pods_designCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8750F6BA587EF353C79DF9 /* Pods_designCode.framework */; };
 		C7234A891C9D3A2200039AC0 /* AnimationEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A881C9D3A2200039AC0 /* AnimationEngine.swift */; };
+		C7234A8C1C9E69CA00039AC0 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7234A8B1C9E69CA00039AC0 /* SWRevealViewController.m */; };
+		C7234A8E1C9E6CBE00039AC0 /* TimeLineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A8D1C9E6CBE00039AC0 /* TimeLineVC.swift */; };
+		C7234A901C9E70B500039AC0 /* SlideMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A8F1C9E70B500039AC0 /* SlideMenuVC.swift */; };
 		C7EC8AD81C9D01560054EB7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */; };
 		C7EC8ADA1C9D01560054EB7B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AD91C9D01560054EB7B /* LoginVC.swift */; };
 		C7EC8ADD1C9D01560054EB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EC8ADB1C9D01560054EB7B /* Main.storyboard */; };
@@ -23,6 +26,10 @@
 		98B2484B033B78926137A4DA /* Pods-designCode.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-designCode.debug.xcconfig"; path = "Pods/Target Support Files/Pods-designCode/Pods-designCode.debug.xcconfig"; sourceTree = "<group>"; };
 		9E8750F6BA587EF353C79DF9 /* Pods_designCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_designCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7234A881C9D3A2200039AC0 /* AnimationEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationEngine.swift; sourceTree = "<group>"; };
+		C7234A8A1C9E69CA00039AC0 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		C7234A8B1C9E69CA00039AC0 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		C7234A8D1C9E6CBE00039AC0 /* TimeLineVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineVC.swift; sourceTree = "<group>"; };
+		C7234A8F1C9E70B500039AC0 /* SlideMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuVC.swift; sourceTree = "<group>"; };
 		C7EC8AD41C9D01560054EB7B /* designCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = designCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7EC8AD91C9D01560054EB7B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -120,7 +127,11 @@
 		C7EC8AEF1C9D1F2C0054EB7B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				C7234A8A1C9E69CA00039AC0 /* SWRevealViewController.h */,
+				C7234A8B1C9E69CA00039AC0 /* SWRevealViewController.m */,
 				C7EC8AD91C9D01560054EB7B /* LoginVC.swift */,
+				C7234A8D1C9E6CBE00039AC0 /* TimeLineVC.swift */,
+				C7234A8F1C9E70B500039AC0 /* SlideMenuVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -255,10 +266,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7EC8AF41C9D24B80054EB7B /* CustomButton.swift in Sources */,
+				C7234A8E1C9E6CBE00039AC0 /* TimeLineVC.swift in Sources */,
 				C7EC8ADA1C9D01560054EB7B /* LoginVC.swift in Sources */,
+				C7234A901C9E70B500039AC0 /* SlideMenuVC.swift in Sources */,
 				C7EC8AD81C9D01560054EB7B /* AppDelegate.swift in Sources */,
 				C7234A891C9D3A2200039AC0 /* AnimationEngine.swift in Sources */,
 				C7EC8AF21C9D1F650054EB7B /* CustomTextField.swift in Sources */,
+				C7234A8C1C9E69CA00039AC0 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
