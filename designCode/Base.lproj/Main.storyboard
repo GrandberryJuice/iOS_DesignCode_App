@@ -55,29 +55,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Twitter Circle" translatesAutoresizingMaskIntoConstraints="NO" id="KAA-FM-7ON">
-                                <rect key="frame" x="331" y="462" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="DoK-pj-d2H"/>
-                                    <constraint firstAttribute="height" constant="40" id="TJP-hh-CuN"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch0-S8-J7b">
-                                <rect key="frame" x="339" y="470" width="24" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="Deu-UF-fVK"/>
-                                    <constraint firstAttribute="height" constant="24" id="f8F-C5-hNm"/>
-                                </constraints>
-                                <state key="normal" image="Twitter"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOA-Wh-7Rh">
-                                <rect key="frame" x="224" y="462" width="40" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0HU-GZ-tL1"/>
-                                    <constraint firstAttribute="width" constant="40" id="URD-rh-dxu"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="Facebook"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04S-zd-CCz" customClass="CustomButton" customModule="designCode" customModuleProvider="target">
                                 <rect key="frame" x="224" y="391" width="147" height="32"/>
                                 <color key="backgroundColor" red="0.99607843137254903" green="0.30588235294117649" blue="0.31372549019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -92,22 +69,61 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sign in with/ Sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1p-4z-p9e">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with/ Sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1p-4z-p9e">
                                 <rect key="frame" x="181" y="431" width="239" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="0vG-uN-zO3"/>
+                                    <constraint firstAttribute="width" constant="239" id="gME-O2-3Ee"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EAq-1O-dId">
+                                <rect key="frame" x="257" y="460" width="100" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOA-Wh-7Rh">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="0HU-GZ-tL1"/>
+                                            <constraint firstAttribute="width" constant="40" id="URD-rh-dxu"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="Facebook"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ch0-S8-J7b">
+                                        <rect key="frame" x="60" y="0.0" width="40" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="99Q-Pz-Bcy"/>
+                                            <constraint firstAttribute="width" constant="24" id="Deu-UF-fVK"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="EI8-ml-q6l"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="Kzo-fv-Tba"/>
+                                            <constraint firstAttribute="height" constant="24" id="f8F-C5-hNm"/>
+                                            <constraint firstAttribute="width" constant="40" id="vws-IP-Q7X"/>
+                                        </constraints>
+                                        <state key="normal" image="Twitter"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Deu-UF-fVK"/>
+                                                <exclude reference="EI8-ml-q6l"/>
+                                                <exclude reference="Kzo-fv-Tba"/>
+                                                <exclude reference="f8F-C5-hNm"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="t11-6f-AJb" firstAttribute="top" secondItem="b6j-gr-yoH" secondAttribute="bottom" constant="30" id="8XZ-zR-orB"/>
+                            <constraint firstItem="u1p-4z-p9e" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Gd1-cR-aOe"/>
                             <constraint firstItem="cxS-X9-y6b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KVi-Ot-RqU"/>
                             <constraint firstItem="b6j-gr-yoH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="8" id="M8x-dZ-RJf"/>
                             <constraint firstItem="04S-zd-CCz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MCV-YH-k7S"/>
+                            <constraint firstItem="u1p-4z-p9e" firstAttribute="top" secondItem="04S-zd-CCz" secondAttribute="bottom" constant="8" id="QX6-hQ-VME"/>
                             <constraint firstItem="04S-zd-CCz" firstAttribute="top" secondItem="cxS-X9-y6b" secondAttribute="bottom" constant="19" id="SEx-Ay-trh"/>
-                            <constraint firstItem="Ch0-S8-J7b" firstAttribute="centerY" secondItem="KAA-FM-7ON" secondAttribute="centerY" id="YoN-Qv-Nvh"/>
-                            <constraint firstItem="Ch0-S8-J7b" firstAttribute="centerX" secondItem="KAA-FM-7ON" secondAttribute="centerX" id="cas-fw-Cx2"/>
+                            <constraint firstItem="EAq-1O-dId" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VbQ-Vz-HPg"/>
+                            <constraint firstItem="EAq-1O-dId" firstAttribute="top" secondItem="u1p-4z-p9e" secondAttribute="bottom" constant="8" id="csx-VJ-jB0"/>
                             <constraint firstItem="t11-6f-AJb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="flT-iP-WyY"/>
                             <constraint firstItem="b6j-gr-yoH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kb7-eU-Cgv"/>
                             <constraint firstItem="cxS-X9-y6b" firstAttribute="top" secondItem="t11-6f-AJb" secondAttribute="bottom" constant="27" id="vjo-2U-vfL"/>
@@ -294,7 +310,6 @@
         <image name="IMG_5577" width="960" height="1280"/>
         <image name="Rectangle 342" width="40" height="28"/>
         <image name="Twitter" width="38" height="32"/>
-        <image name="Twitter Circle" width="77" height="77"/>
         <image name="coding" width="400" height="400"/>
     </resources>
 </document>
