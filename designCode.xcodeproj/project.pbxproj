@@ -15,6 +15,8 @@
 		C7234A951C9F5AB700039AC0 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7234A921C9F5AB700039AC0 /* Bolts.framework */; };
 		C7234A961C9F5AB700039AC0 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7234A931C9F5AB700039AC0 /* FBSDKCoreKit.framework */; };
 		C7234A971C9F5AB700039AC0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7234A941C9F5AB700039AC0 /* FBSDKLoginKit.framework */; };
+		C7234A9A1C9FA13400039AC0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A991C9FA13400039AC0 /* DataService.swift */; };
+		C7234A9C1C9FAB8100039AC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A9B1C9FAB8100039AC0 /* Constants.swift */; };
 		C7EC8AD81C9D01560054EB7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */; };
 		C7EC8ADA1C9D01560054EB7B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AD91C9D01560054EB7B /* LoginVC.swift */; };
 		C7EC8ADD1C9D01560054EB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EC8ADB1C9D01560054EB7B /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 		C7234A921C9F5AB700039AC0 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		C7234A931C9F5AB700039AC0 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C7234A941C9F5AB700039AC0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C7234A991C9FA13400039AC0 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		C7234A9B1C9FAB8100039AC0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7EC8AD41C9D01560054EB7B /* designCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = designCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7EC8AD91C9D01560054EB7B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				C7234A881C9D3A2200039AC0 /* AnimationEngine.swift */,
+				C7234A9B1C9FAB8100039AC0 /* Constants.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -96,6 +101,14 @@
 				C7234A941C9F5AB700039AC0 /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7234A981C9FA11300039AC0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C7234A991C9FA13400039AC0 /* DataService.swift */,
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 		C7EC8ACB1C9D01550054EB7B = {
@@ -119,6 +132,7 @@
 		C7EC8AD61C9D01560054EB7B /* designCode */ = {
 			isa = PBXGroup;
 			children = (
+				C7234A981C9FA11300039AC0 /* Services */,
 				C7234A911C9F5AA200039AC0 /* Frameworks */,
 				C7234A871C9D3A0800039AC0 /* Util */,
 				C7EC8AF01C9D1F350054EB7B /* Model */,
@@ -285,10 +299,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7234A9A1C9FA13400039AC0 /* DataService.swift in Sources */,
 				C7EC8AF41C9D24B80054EB7B /* CustomButton.swift in Sources */,
 				C7234A8E1C9E6CBE00039AC0 /* TimeLineVC.swift in Sources */,
 				C7EC8ADA1C9D01560054EB7B /* LoginVC.swift in Sources */,
 				C7234A901C9E70B500039AC0 /* SlideMenuVC.swift in Sources */,
+				C7234A9C1C9FAB8100039AC0 /* Constants.swift in Sources */,
 				C7EC8AD81C9D01560054EB7B /* AppDelegate.swift in Sources */,
 				C7234A891C9D3A2200039AC0 /* AnimationEngine.swift in Sources */,
 				C7EC8AF21C9D1F650054EB7B /* CustomTextField.swift in Sources */,

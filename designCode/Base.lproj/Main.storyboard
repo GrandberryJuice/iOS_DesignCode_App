@@ -48,7 +48,7 @@
                                     <constraint firstAttribute="height" constant="30" id="zsO-4b-AnB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="inset">
                                         <real key="value" value="8"/>
@@ -68,6 +68,9 @@
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="attemptLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vAM-UZ-HIF"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign in with/ Sign up with" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1p-4z-p9e">
                                 <rect key="frame" x="181" y="431" width="239" height="21"/>
@@ -134,8 +137,11 @@
                     </view>
                     <connections>
                         <outlet property="emailConstraint" destination="flT-iP-WyY" id="yvr-lj-f9S"/>
+                        <outlet property="emailField" destination="t11-6f-AJb" id="e6m-ik-V42"/>
                         <outlet property="loginBtnConstraint" destination="MCV-YH-k7S" id="z49-eD-Etk"/>
                         <outlet property="passwordConstraint" destination="KVi-Ot-RqU" id="eQ7-HR-fTj"/>
+                        <outlet property="passwordField" destination="cxS-X9-y6b" id="54a-l7-Xbh"/>
+                        <segue destination="49D-TA-l7X" kind="show" identifier="loggedIn" id="iMv-Si-Ql8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
