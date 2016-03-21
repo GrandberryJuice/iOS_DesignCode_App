@@ -8,7 +8,8 @@
 
 import UIKit
 import pop
-
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 class LoginVC: UIViewController {
     //Constraints
@@ -26,7 +27,22 @@ class LoginVC: UIViewController {
     override func viewDidAppear(animated: Bool) {
         self.animEngine.animateOnScreen(1)
     }
-
+    
+    @IBAction func fbBtnPressed(sender:UIButton) {
+        let facebookLogin = FBSDKLoginManager()
+        
+        facebookLogin.logInWithReadPermissions(["email"]) { (facebookResult: FBSDKLoginManagerLoginResult!,facebookError: NSError!) -> Void in
+            
+            if facebookError != nil {
+                print("Facebook login failed. Error \(facebookError)")
+            
+            } else {
+                let accessToken = FBSDKAccessToken.currentAccessToken().tokenString
+                print("Successfully logged in with facebook. \(accessToken)")
+            }
+        }
+    
+    }
 
 
 }
