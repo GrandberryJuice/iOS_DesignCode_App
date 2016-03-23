@@ -63,6 +63,12 @@ class LoginVC: UIViewController {
                     } else {
                         print("Logged In! \(authData)")
                         
+                        //Creating a firebase user
+                        //if let provider = authData.provider as? String
+                        let user = ["provider":authData.provider!, "blah":"test"]
+                        //set the value to firebase
+                        DataService.ds.createFirebaseUsers(authData.uid, user: user)
+                        
                         //save user to device
                         NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: KEY_UID)
                         self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
@@ -89,7 +95,17 @@ class LoginVC: UIViewController {
                                 } else {
                                     //if logged in save account and log in
                                     NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
-                                    DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: nil)
+                                   
+                                    //firebase auth
+                                    DataService.ds.REF_BASE.authUser(email, password: pwd, withCompletionBlock: {
+                                        err, authData in
+                                        
+                                        let user = ["provider":authData.provider!, "blah":"email"]
+                                        //set the value to firebase
+                                        DataService.ds.createFirebaseUsers(authData.uid, user: user)
+                                        
+                                    })
+                                
                                         self.performSegueWithIdentifier(SEGUE_LOGGED_IN, sender: nil)
                                 }
                             })
