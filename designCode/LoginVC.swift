@@ -124,6 +124,8 @@ class LoginVC: UIViewController {
 
 }
 
+
+/***
 //Standard UIAnnimation -just in case
 //    override func viewDidAppear(animated: Bool) {
 //        UIView.animateWithDuration(6) { () -> Void in
@@ -131,3 +133,4 @@ class LoginVC: UIViewController {
 //            self.view.layoutIfNeeded()
 //        }
 //    }
+***/

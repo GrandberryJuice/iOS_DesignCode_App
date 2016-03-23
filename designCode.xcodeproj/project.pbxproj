@@ -17,6 +17,9 @@
 		C7234A971C9F5AB700039AC0 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7234A941C9F5AB700039AC0 /* FBSDKLoginKit.framework */; };
 		C7234A9A1C9FA13400039AC0 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A991C9FA13400039AC0 /* DataService.swift */; };
 		C7234A9C1C9FAB8100039AC0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A9B1C9FAB8100039AC0 /* Constants.swift */; };
+		C7234A9E1CA0FC1600039AC0 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A9D1CA0FC1600039AC0 /* PostCell.swift */; };
+		C7234AA01CA1058400039AC0 /* MaterialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234A9F1CA1058400039AC0 /* MaterialView.swift */; };
+		C7234AA21CA1145600039AC0 /* CustomNavBtns.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7234AA11CA1145600039AC0 /* CustomNavBtns.swift */; };
 		C7EC8AD81C9D01560054EB7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */; };
 		C7EC8ADA1C9D01560054EB7B /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AD91C9D01560054EB7B /* LoginVC.swift */; };
 		C7EC8ADD1C9D01560054EB7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EC8ADB1C9D01560054EB7B /* Main.storyboard */; };
@@ -40,6 +43,9 @@
 		C7234A941C9F5AB700039AC0 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C7234A991C9FA13400039AC0 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		C7234A9B1C9FAB8100039AC0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C7234A9D1CA0FC1600039AC0 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
+		C7234A9F1CA1058400039AC0 /* MaterialView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaterialView.swift; sourceTree = "<group>"; };
+		C7234AA11CA1145600039AC0 /* CustomNavBtns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavBtns.swift; sourceTree = "<group>"; };
 		C7EC8AD41C9D01560054EB7B /* designCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = designCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7EC8AD91C9D01560054EB7B /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
@@ -87,6 +93,7 @@
 		C7234A871C9D3A0800039AC0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */,
 				C7234A881C9D3A2200039AC0 /* AnimationEngine.swift */,
 				C7234A9B1C9FAB8100039AC0 /* Constants.swift */,
 			);
@@ -138,8 +145,6 @@
 				C7EC8AF01C9D1F350054EB7B /* Model */,
 				C7EC8AEF1C9D1F2C0054EB7B /* Controller */,
 				C7EC8AEE1C9D1F100054EB7B /* View */,
-				C7EC8AD71C9D01560054EB7B /* AppDelegate.swift */,
-				C7EC8ADB1C9D01560054EB7B /* Main.storyboard */,
 				C7EC8ADE1C9D01560054EB7B /* Assets.xcassets */,
 				C7EC8AE01C9D01560054EB7B /* LaunchScreen.storyboard */,
 				C7EC8AE31C9D01560054EB7B /* Info.plist */,
@@ -151,8 +156,12 @@
 		C7EC8AEE1C9D1F100054EB7B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C7EC8ADB1C9D01560054EB7B /* Main.storyboard */,
 				C7EC8AF11C9D1F650054EB7B /* CustomTextField.swift */,
 				C7EC8AF31C9D24B70054EB7B /* CustomButton.swift */,
+				C7234A9D1CA0FC1600039AC0 /* PostCell.swift */,
+				C7234A9F1CA1058400039AC0 /* MaterialView.swift */,
+				C7234AA11CA1145600039AC0 /* CustomNavBtns.swift */,
 			);
 			name = View;
 			path = ..;
@@ -300,13 +309,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7234A9A1C9FA13400039AC0 /* DataService.swift in Sources */,
+				C7234AA21CA1145600039AC0 /* CustomNavBtns.swift in Sources */,
 				C7EC8AF41C9D24B80054EB7B /* CustomButton.swift in Sources */,
 				C7234A8E1C9E6CBE00039AC0 /* TimeLineVC.swift in Sources */,
+				C7234AA01CA1058400039AC0 /* MaterialView.swift in Sources */,
 				C7EC8ADA1C9D01560054EB7B /* LoginVC.swift in Sources */,
 				C7234A901C9E70B500039AC0 /* SlideMenuVC.swift in Sources */,
 				C7234A9C1C9FAB8100039AC0 /* Constants.swift in Sources */,
 				C7EC8AD81C9D01560054EB7B /* AppDelegate.swift in Sources */,
 				C7234A891C9D3A2200039AC0 /* AnimationEngine.swift in Sources */,
+				C7234A9E1CA0FC1600039AC0 /* PostCell.swift in Sources */,
 				C7EC8AF21C9D1F650054EB7B /* CustomTextField.swift in Sources */,
 				C7234A8C1C9E69CA00039AC0 /* SWRevealViewController.m in Sources */,
 			);
@@ -321,6 +333,7 @@
 				C7EC8ADC1C9D01560054EB7B /* Base */,
 			);
 			name = Main.storyboard;
+			path = designCode;
 			sourceTree = "<group>";
 		};
 		C7EC8AE01C9D01560054EB7B /* LaunchScreen.storyboard */ = {
