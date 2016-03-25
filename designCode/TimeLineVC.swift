@@ -14,6 +14,7 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //Outlets
     @IBOutlet weak var tableView:UITableView!
     var posts = [Post]()
+    static var imageCache = NSCache()
     
     //Classes
     var customNavBtn = CustomNavBtns()
@@ -22,6 +23,9 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         super.viewDidLoad()
         
         self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        //set view height
+        tableView.estimatedRowHeight = 370
         
         let Menu = customNavBtn.CustomMenuBtn()
         Menu.addTarget(self.revealViewController(), action:Selector("revealToggle:"), forControlEvents: .TouchUpInside)
@@ -42,10 +46,10 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             self.posts = []
             
             //Grab all snapshots and interate through each
+            //snaps hold all data - key:value
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
                 
                 for snap in snapshots {
-                    print("SNAP:\(snap)")
                     
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                       let key = snap.key
@@ -62,8 +66,23 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
-        return tableView.dequeueReusableCellWithIdentifier("PostCell") as! PostCell
-        
+        if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
+            cell.request?.cancel()
+            
+            //create a empty image
+            var img:UIImage?
+
+            if let url = post.imageUrl {
+                //store the image and cache
+                img = TimeLineVC.imageCache.objectForKey(url) as? UIImage
+            }
+            //call function in Postcell
+            cell.configureCell(post,img:img)
+            return cell
+            
+        } else {
+            return PostCell()
+        }  
         
     }
     
@@ -75,6 +94,18 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let post = posts[indexPath.row]
+        
+        /* if there is no image in the tableView
+         *   make the view smaller
+        */
+        if post.imageUrl == nil {
+            return 150
+        } else {
+        
+            return tableView.estimatedRowHeight
+        }
+    }
 
 }
