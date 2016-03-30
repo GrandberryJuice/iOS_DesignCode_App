@@ -14,7 +14,11 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var TableView:UITableView!
     
     var menulists = [Menu]()
-    
+    let empty = Menu(Image: "", title: "")
+    let list2 = Menu(Image: "Message.png", title: "Message")
+    let list1 = Menu(Image:"profile-1.png", title: "Profile")
+    let list3 = Menu(Image: "friends.png", title: "Friends")
+    let list4 = Menu(Image: "timeline.png", title: "Timeline")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +26,11 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         TableView.dataSource = self
         TableView.delegate = self
         
-        let menulist = Menu(Image: "", title: "Profile")
-        menulists.append(menulist)
+        menulists.append(empty)
+        menulists.append(list1)
+        menulists.append(list2)
+        menulists.append(list3)
+        menulists.append(list4)
         
         TableView.reloadData()
     }
@@ -43,7 +50,7 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return menulists.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
