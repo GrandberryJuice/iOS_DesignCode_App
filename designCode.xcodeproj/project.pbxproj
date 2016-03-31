@@ -30,6 +30,7 @@
 		C7EC8AE21C9D01560054EB7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7EC8AE01C9D01560054EB7B /* LaunchScreen.storyboard */; };
 		C7EC8AF21C9D1F650054EB7B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AF11C9D1F650054EB7B /* CustomTextField.swift */; };
 		C7EC8AF41C9D24B80054EB7B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AF31C9D24B70054EB7B /* CustomButton.swift */; };
+		C7F21B7C1CACDF4A0058B9DA /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F21B7B1CACDF4A0058B9DA /* MessageVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		C7EC8AE91C9D1AED0054EB7B /* designCode-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "designCode-Bridging-Header.h"; sourceTree = "<group>"; };
 		C7EC8AF11C9D1F650054EB7B /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C7EC8AF31C9D24B70054EB7B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C7F21B7B1CACDF4A0058B9DA /* MessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				C7EC8AD91C9D01560054EB7B /* LoginVC.swift */,
 				C7234A8D1C9E6CBE00039AC0 /* TimeLineVC.swift */,
 				C7234A8F1C9E70B500039AC0 /* SlideMenuVC.swift */,
+				C7F21B7B1CACDF4A0058B9DA /* MessageVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -330,6 +333,7 @@
 				C7EC8AD81C9D01560054EB7B /* AppDelegate.swift in Sources */,
 				C7234A891C9D3A2200039AC0 /* AnimationEngine.swift in Sources */,
 				C7234A9E1CA0FC1600039AC0 /* PostCell.swift in Sources */,
+				C7F21B7C1CACDF4A0058B9DA /* MessageVC.swift in Sources */,
 				C7EC8AF21C9D1F650054EB7B /* CustomTextField.swift in Sources */,
 				C7B9F1A51CA7B66D00BC352B /* MenuCell.swift in Sources */,
 				C7234A8C1C9E69CA00039AC0 /* SWRevealViewController.m in Sources */,

@@ -14,11 +14,17 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     @IBOutlet weak var TableView:UITableView!
     
     var menulists = [Menu]()
+    var identities = [String]()
+    var messageVC = MessageVC()
+  
+    
+    
     let empty = Menu(Image: "", title: "")
-    let list2 = Menu(Image: "Message.png", title: "Message")
-    let list1 = Menu(Image:"profile-1.png", title: "Profile")
+    let list1 = Menu(Image: "post", title: "Post")
+    let list2 = Menu(Image:"profile-1.png", title: "Profile")
     let list3 = Menu(Image: "friends.png", title: "Friends")
-    let list4 = Menu(Image: "timeline.png", title: "Timeline")
+    let list4 = Menu(Image: "Message.png", title: "Message")
+    let list5 = Menu(Image: "timeline.png", title: "Timeline")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +37,8 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         menulists.append(list2)
         menulists.append(list3)
         menulists.append(list4)
+        
+        identities = ["", "postVC","profileVC","friendsVC","messageVC","timelineVC"]
         
         TableView.reloadData()
     }
@@ -70,4 +78,20 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         }
         
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //performs segue for each of the cells clicked
+        let vcName = identities[indexPath.row]
+        let viewController = storyboard!.instantiateViewControllerWithIdentifier(vcName)
+        //shows view controller
+        self.presentViewController(viewController, animated: true, completion:nil)
+   
+        
+    
+        
+        
+    }
+    
+    
+    
 }

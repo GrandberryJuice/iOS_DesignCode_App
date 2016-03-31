@@ -17,5 +17,12 @@ class CustomNavBtns: UINavigationBar {
         
         return MenuBtn
     }
+    
+//    func CustomPostBtn() ->UIButton {
+//        let PostBtn:UIButton = UIButton(frame: CGRectMake(0,0,25,25))
+//        PostBtn.setImage(UIImage(named: "Pencil"), forState: .Normal)
+//    
+//        return PostBtn
+//    }
  
 }

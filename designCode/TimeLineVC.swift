@@ -27,13 +27,23 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //set view height
         tableView.estimatedRowHeight = 370
         
+        
         let Menu = customNavBtn.CustomMenuBtn()
+//        let PostBtn = customNavBtn.CustomPostBtn()
+        
         Menu.addTarget(self.revealViewController(), action:Selector("revealToggle:"), forControlEvents: .TouchUpInside)
         
-        //convert back to barbtn
+        //left button for message
+        //converted for use
         let leftBarBtn = UIBarButtonItem()
         leftBarBtn.customView = Menu
         self.navigationItem.rightBarButtonItem = leftBarBtn
+        
+        //right button for post
+//         UIBarButtonItem.appearance().tintColor = UIColor.whiteColor()
+//        let rightBarBtn = UIBarButtonItem()
+//        rightBarBtn.customView = PostBtn
+//        self.navigationItem.leftBarButtonItem = rightBarBtn
 
         tableView.delegate = self
         tableView.dataSource = self
