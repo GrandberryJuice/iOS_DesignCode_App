@@ -54,7 +54,7 @@ class PostCell: UITableViewCell {
         self.descriptionText.text = post.postDesc
         self.likesLbl.text = "\(post.likes)"
         
-        print(post.imageUrl)
+        //print(post.imageUrl)
         
         if post.imageUrl != nil {
             
@@ -70,13 +70,17 @@ class PostCell: UITableViewCell {
                         //do error checking
                         let img = UIImage(data: data!)!
                         self.showcaseImg.image = img
+                      
                         TimeLineVC.imageCache.setObject(img, forKey: self.post.imageUrl!)
-                        
+                          self.showcaseImg.hidden = false
+                    } else {
+                        print(error.debugDescription)
                     }
+                    
                 })
             }
         } else {
-            self.showcaseImg.hidden = true
+            //self.showcaseImg.hidden = true
         }
         
     }

@@ -38,7 +38,9 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         menulists.append(list3)
         menulists.append(list4)
         
-        identities = ["", "postVC","profileVC","friendsVC","messageVC","timelineVC"]
+        identities = ["","postVC","profileVC","friendsVC","messageVC"]
+        
+        //"postVC",,"friendsVC","messageVC","timelineVC"
         
         TableView.reloadData()
     }
@@ -76,20 +78,19 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
             
         
         }
-        
+    
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //performs segue for each of the cells clicked
         let vcName = identities[indexPath.row]
-        let viewController = storyboard!.instantiateViewControllerWithIdentifier(vcName)
+        //let viewController = storyboard!.instantiateViewControllerWithIdentifier(vcName)
+        
+        let vc : AnyObject! = self.storyboard!.instantiateViewControllerWithIdentifier(vcName)
+         //self.showViewController(vc as! UIViewController, sender: vc)
         //shows view controller
-        self.presentViewController(viewController, animated: true, completion:nil)
-   
-        
-    
-        
-        
+        //self.presentViewController(viewController, animated: true, completion:nil)
+        self.revealViewController().presentViewController(vc as! UIViewController, animated: true, completion: nil)
     }
     
     

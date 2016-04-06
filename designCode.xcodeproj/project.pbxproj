@@ -31,6 +31,10 @@
 		C7EC8AF21C9D1F650054EB7B /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AF11C9D1F650054EB7B /* CustomTextField.swift */; };
 		C7EC8AF41C9D24B80054EB7B /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7EC8AF31C9D24B70054EB7B /* CustomButton.swift */; };
 		C7F21B7C1CACDF4A0058B9DA /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F21B7B1CACDF4A0058B9DA /* MessageVC.swift */; };
+		C7F21B7E1CAE02730058B9DA /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F21B7D1CAE02730058B9DA /* MessageCell.swift */; };
+		C7F21B801CAE04440058B9DA /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F21B7F1CAE04440058B9DA /* ProfileVC.swift */; };
+		C7F21B841CB122390058B9DA /* CustomImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F21B831CB122390058B9DA /* CustomImages.swift */; };
+		C7F21B861CB123F40058B9DA /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7F21B851CB123F40058B9DA /* CustomTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +68,10 @@
 		C7EC8AF11C9D1F650054EB7B /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		C7EC8AF31C9D24B70054EB7B /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C7F21B7B1CACDF4A0058B9DA /* MessageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		C7F21B7D1CAE02730058B9DA /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		C7F21B7F1CAE04440058B9DA /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C7F21B831CB122390058B9DA /* CustomImages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomImages.swift; sourceTree = "<group>"; };
+		C7F21B851CB123F40058B9DA /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,9 @@
 				C7234A9F1CA1058400039AC0 /* MaterialView.swift */,
 				C7234AA11CA1145600039AC0 /* CustomNavBtns.swift */,
 				C7B9F1A41CA7B66D00BC352B /* MenuCell.swift */,
+				C7F21B7D1CAE02730058B9DA /* MessageCell.swift */,
+				C7F21B831CB122390058B9DA /* CustomImages.swift */,
+				C7F21B851CB123F40058B9DA /* CustomTextView.swift */,
 			);
 			name = View;
 			path = ..;
@@ -185,6 +196,7 @@
 				C7234A8D1C9E6CBE00039AC0 /* TimeLineVC.swift */,
 				C7234A8F1C9E70B500039AC0 /* SlideMenuVC.swift */,
 				C7F21B7B1CACDF4A0058B9DA /* MessageVC.swift */,
+				C7F21B7F1CAE04440058B9DA /* ProfileVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -323,6 +335,7 @@
 				C7234A9A1C9FA13400039AC0 /* DataService.swift in Sources */,
 				C7234AA21CA1145600039AC0 /* CustomNavBtns.swift in Sources */,
 				C7EC8AF41C9D24B80054EB7B /* CustomButton.swift in Sources */,
+				C7F21B801CAE04440058B9DA /* ProfileVC.swift in Sources */,
 				C7234A8E1C9E6CBE00039AC0 /* TimeLineVC.swift in Sources */,
 				C7234AA01CA1058400039AC0 /* MaterialView.swift in Sources */,
 				C7234AA41CA254FD00039AC0 /* Post.swift in Sources */,
@@ -334,9 +347,12 @@
 				C7234A891C9D3A2200039AC0 /* AnimationEngine.swift in Sources */,
 				C7234A9E1CA0FC1600039AC0 /* PostCell.swift in Sources */,
 				C7F21B7C1CACDF4A0058B9DA /* MessageVC.swift in Sources */,
+				C7F21B861CB123F40058B9DA /* CustomTextView.swift in Sources */,
 				C7EC8AF21C9D1F650054EB7B /* CustomTextField.swift in Sources */,
 				C7B9F1A51CA7B66D00BC352B /* MenuCell.swift in Sources */,
 				C7234A8C1C9E69CA00039AC0 /* SWRevealViewController.m in Sources */,
+				C7F21B841CB122390058B9DA /* CustomImages.swift in Sources */,
+				C7F21B7E1CAE02730058B9DA /* MessageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

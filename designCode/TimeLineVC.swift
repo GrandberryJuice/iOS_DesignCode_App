@@ -27,6 +27,7 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //set view height
         tableView.estimatedRowHeight = 370
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onPostLoaded:", name: "postsLoaded", object: nil)
         
         let Menu = customNavBtn.CustomMenuBtn()
 //        let PostBtn = customNavBtn.CustomPostBtn()
@@ -53,7 +54,7 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         DataService.ds.REF_POST.observeEventType(.Value, withBlock:{ snapshot in
             print(snapshot.value)
             //clear before update
-            self.posts = []
+            //self.posts = []
             
             //Grab all snapshots and interate through each
             //snaps hold all data - key:value
@@ -64,6 +65,7 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                       let key = snap.key
                         let post = Post(postKey: key, dictionary: postDict)
+                        print(post)
                         self.posts.append(post)
                     }
                 }
@@ -76,6 +78,7 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let post = posts[indexPath.row]
+        
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.request?.cancel()
             
@@ -117,5 +120,12 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return tableView.estimatedRowHeight
         }
     }
+    
+    func onPostLoaded(notification:NSNotification) {
+        posts.removeAll()
+        self.tableView.reloadData()
+    }
+    
+    
 
 }
