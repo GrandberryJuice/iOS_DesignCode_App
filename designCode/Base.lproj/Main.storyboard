@@ -184,8 +184,8 @@
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="Olt-9s-TjH"/>
                                                 <exclude reference="ALV-Qc-cEc"/>
+                                                <exclude reference="Olt-9s-TjH"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -257,6 +257,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zd5-TF-VYD">
                                 <rect key="frame" x="20" y="356" width="560" height="236"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BiA-Sb-0nc">
                                     <size key="itemSize" width="74" height="72"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -264,7 +265,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Eoj-7K-0wV">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProfileCell" id="Eoj-7K-0wV" customClass="ProfileCell" customModule="designCode" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="74" height="72"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -283,6 +284,9 @@
                                             <constraint firstAttribute="trailing" secondItem="sXj-p5-Xgy" secondAttribute="trailing" id="JdJ-fs-UkK"/>
                                             <constraint firstAttribute="bottom" secondItem="sXj-p5-Xgy" secondAttribute="bottom" id="aft-mP-gXh"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="userUploadImage" destination="sXj-p5-Xgy" id="6fy-iI-Rm6"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -318,6 +322,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="Zd5-TF-VYD" id="uPw-tc-Md3"/>
                         <outlet property="imageBackground" destination="5oI-ee-Ipo" id="Fu1-4G-Ghc"/>
                         <outlet property="profileImage" destination="6Pa-5i-lzh" id="2pB-bC-7yY"/>
                     </connections>

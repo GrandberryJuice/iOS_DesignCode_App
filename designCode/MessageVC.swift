@@ -86,7 +86,7 @@ class MessageVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
                                 if let info = response.result.value as? Dictionary<String, AnyObject> {
                                     if let links = info["links"] as? Dictionary<String,AnyObject> {
                                         if let imgLink = links["image_link"] as? String {
-                                            print("Link:\(imgLink)")
+                                            //print("Link:\(imgLink)")
                                             self.postToFirebase(imgLink)
                                         }
                                     }

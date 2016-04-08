@@ -52,7 +52,7 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //*Value-anydata changes
         //called when ever data is changed
         DataService.ds.REF_POST.observeEventType(.Value, withBlock:{ snapshot in
-            print(snapshot.value)
+            //print(snapshot.value)
             //clear before update
             //self.posts = []
             
@@ -65,7 +65,7 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
                       let key = snap.key
                         let post = Post(postKey: key, dictionary: postDict)
-                        print(post)
+        
                         self.posts.append(post)
                     }
                 }
