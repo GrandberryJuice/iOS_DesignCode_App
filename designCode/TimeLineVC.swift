@@ -49,12 +49,10 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
-        //*Value-anydata changes
+        //*Value- anydata changes
         //called when ever data is changed
         DataService.ds.REF_POST.observeEventType(.Value, withBlock:{ snapshot in
-            //print(snapshot.value)
-            //clear before update
-            //self.posts = []
+        
             
             //Grab all snapshots and interate through each
             //snaps hold all data - key:value

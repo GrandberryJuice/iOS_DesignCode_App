@@ -91,6 +91,8 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
         //shows view controller
         //self.presentViewController(viewController, animated: true, completion:nil)
         self.revealViewController().presentViewController(vc as! UIViewController, animated: true, completion: nil)
+        //closes side menu
+        self.revealViewController().revealToggleAnimated(true)
     }
     
     

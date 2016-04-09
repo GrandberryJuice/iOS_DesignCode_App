@@ -570,21 +570,48 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G9v-bv-UZn">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="152"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IMG_5577" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-8X-fh7">
-                                        <rect key="frame" x="237" y="14" width="126" height="124"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="IMG_5577" translatesAutoresizingMaskIntoConstraints="NO" id="JgN-8X-fh7">
+                                        <rect key="frame" x="263" y="14" width="90" height="91"/>
                                         <constraints>
+                                            <constraint firstAttribute="height" constant="91" id="Ukw-hm-EED"/>
                                             <constraint firstAttribute="width" constant="126" id="WDh-Yb-KAe"/>
                                             <constraint firstAttribute="height" constant="124" id="ZRV-OW-s7p"/>
+                                            <constraint firstAttribute="width" constant="90" id="ruk-bA-koN"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="WDh-Yb-KAe"/>
+                                                <exclude reference="ZRV-OW-s7p"/>
+                                            </mask>
+                                        </variation>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="@GrandberryJuice" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ilm-mi-ak2">
+                                        <rect key="frame" x="134" y="113" width="350" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="b2Q-Y0-nTg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.50980392156862742" green="0.74509803921568629" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="6fv-JU-ttY"/>
+                                    <constraint firstItem="Ilm-mi-ak2" firstAttribute="top" secondItem="JgN-8X-fh7" secondAttribute="bottom" constant="8" id="QXE-al-Q5C"/>
                                     <constraint firstItem="JgN-8X-fh7" firstAttribute="top" secondItem="G9v-bv-UZn" secondAttribute="top" constant="14" id="TUd-O7-mu0"/>
                                     <constraint firstItem="JgN-8X-fh7" firstAttribute="centerX" secondItem="G9v-bv-UZn" secondAttribute="centerX" id="qkz-Ix-Mfj"/>
+                                    <constraint firstItem="Ilm-mi-ak2" firstAttribute="centerX" secondItem="G9v-bv-UZn" secondAttribute="centerX" id="r3P-Sf-AuN"/>
                                     <constraint firstAttribute="height" constant="152" id="tV4-Ra-bze"/>
+                                    <constraint firstItem="JgN-8X-fh7" firstAttribute="top" secondItem="G9v-bv-UZn" secondAttribute="top" constant="14" id="tmL-Xe-kkw"/>
+                                    <constraint firstItem="JgN-8X-fh7" firstAttribute="centerX" secondItem="G9v-bv-UZn" secondAttribute="centerX" id="tq6-J3-Zkh"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="TUd-O7-mu0"/>
+                                        <exclude reference="qkz-Ix-Mfj"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fnl-U9-Bv4">
                                 <rect key="frame" x="0.0" y="151" width="600" height="449"/>
