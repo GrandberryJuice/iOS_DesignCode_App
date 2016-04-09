@@ -124,6 +124,5 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tableView.reloadData()
     }
     
-    
 
 }

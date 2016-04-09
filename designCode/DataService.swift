@@ -32,6 +32,14 @@ class DataService {
         return _REF_USERS
     }
     
+    var REF_USER_CURRENT:Firebase{
+        let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+        let user = Firebase(url: "\(URL_BASE)").childByAppendingPath("users").childByAppendingPath(uid)
+        return user!
+    }
+    
+    
+    
     //
     func createFirebaseUsers(uid:String, user:Dictionary<String,String>) {
         //get uid from users and save it even it dosent exist 

@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import Firebase
 
 class PostCell: UITableViewCell {
     
@@ -15,9 +16,11 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var showcaseImg:UIImageView!
     @IBOutlet weak var descriptionText:UITextView!
     @IBOutlet weak var likesLbl:UILabel!
+    @IBOutlet weak var likeImage:UIImageView!
     
     //store post
     var post:Post!
+    var likeRef:Firebase!
     
     //Alamofire request
     var request:Request?
@@ -26,18 +29,21 @@ class PostCell: UITableViewCell {
   
     override func awakeFromNib() {
         super.awakeFromNib()
-//            print(data)
+        let tap = UITapGestureRecognizer(target: self, action: "likeTapped:")
+        tap.numberOfTapsRequired = 1
+        likeImage.addGestureRecognizer(tap)
+        likeImage.userInteractionEnabled = true
+        
     }
     
     
     
     
     
-    //after a profile image has a size
+    //Circle profile image in tableView
     override func drawRect(rect: CGRect) {
-        //to get a complete circle
+ 
         profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
-        //image not appear outside where it should go
         profileImg.clipsToBounds = true
         showcaseImg.clipsToBounds = true
         
@@ -47,47 +53,84 @@ class PostCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    
+    /*
+        configuring the tableView cell
+        set up for likes,label, image request
+    */
     func configureCell(post:Post, img:UIImage?) {
         self.post = post
+        //get current users likes, and grab post key
+        likeRef = DataService.ds.REF_USER_CURRENT.childByAppendingPath("likes").childByAppendingPath(post.postKey)
         
         self.descriptionText.text = post.postDesc
         self.likesLbl.text = "\(post.likes)"
         
-        //print(post.imageUrl)
-        
-        if post.imageUrl != nil {
+            if post.imageUrl != nil {
             
-            if img != nil {
-                self.showcaseImg.image = img
-            } else {
+                if img != nil {
+                    self.showcaseImg.image = img
+                } else {
                 
-                request = Alamofire.request(.GET, post.imageUrl!).validate(contentType:["image/*"]).response(completionHandler: { request, response, data, error in
-                    //check if there is a value
-                    print(data)
+                    request = Alamofire.request(.GET, post.imageUrl!).validate(contentType:["image/*"]).response(completionHandler: { request, response, data, error in
+                        //check if there is a value
+                        print(data)
  
-                    if error == nil {
-                        //do error checking
-                        let img = UIImage(data: data!)!
-                        self.showcaseImg.image = img
+                        if error == nil {
+                            //do error checking
+                            let img = UIImage(data: data!)!
+                            self.showcaseImg.image = img
                       
-                        TimeLineVC.imageCache.setObject(img, forKey: self.post.imageUrl!)
-                          self.showcaseImg.hidden = false
-                    } else {
-                        print(error.debugDescription)
-                    }
+                            TimeLineVC.imageCache.setObject(img, forKey: self.post.imageUrl!)
+                            self.showcaseImg.hidden = false
+                        } else {
+                            print(error.debugDescription)
+                        }
                     
-                })
-            }
-        } else {
-            //self.showcaseImg.hidden = true
+                    })
+                }
+            } else {
+
         }
         
+        
+      
+        //only called once
+        likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            /*
+            * if there are no likes - if there is no data value
+            * it comes back as NSNull in FIREBASE
+            */
+            if let doesNotExist = snapshot.value as? NSNull {
+                self.likeImage.image = UIImage(named: "heart-empty")
+            } else {
+                self.likeImage.image = UIImage(named: "heart-full")
+            }
+        })
     }
     
     
 
+    func likeTapped (sender:UITapGestureRecognizer) {
+        //only called once
+        likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
+            /*
+            * if there are no likes - if there is no data value
+            * it comes back as NSNull in FIREBASE
+            */
+            if let doesNotExist = snapshot.value as? NSNull {
+               
+                self.likeImage.image = UIImage(named: "heart-full")
+                self.post.adjustLikes(true)
+                //set value save the reference and add to firebase
+                self.likeRef.setValue(true)
+            } else {
+                   self.likeImage.image = UIImage(named: "heart-empty")
+                    self.post.adjustLikes(false)
+                    self.likeRef.removeValue()
+            }
+        })
     
+    }
     
         
 }
