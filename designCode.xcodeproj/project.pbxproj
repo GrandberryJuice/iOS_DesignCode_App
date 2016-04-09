@@ -178,13 +178,13 @@
 				C7EC8AF11C9D1F650054EB7B /* CustomTextField.swift */,
 				C7EC8AF31C9D24B70054EB7B /* CustomButton.swift */,
 				C7234A9D1CA0FC1600039AC0 /* PostCell.swift */,
+				C7F385541CB612B50054BE12 /* ProfileCell.swift */,
+				C7F21B7D1CAE02730058B9DA /* MessageCell.swift */,
 				C7234A9F1CA1058400039AC0 /* MaterialView.swift */,
 				C7234AA11CA1145600039AC0 /* CustomNavBtns.swift */,
 				C7B9F1A41CA7B66D00BC352B /* MenuCell.swift */,
-				C7F21B7D1CAE02730058B9DA /* MessageCell.swift */,
 				C7F21B831CB122390058B9DA /* CustomImages.swift */,
 				C7F21B851CB123F40058B9DA /* CustomTextView.swift */,
-				C7F385541CB612B50054BE12 /* ProfileCell.swift */,
 			);
 			name = View;
 			path = ..;

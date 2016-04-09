@@ -21,9 +21,25 @@ class ProfileCell: UICollectionViewCell {
     func ConfigureCell(post:Post) {
         
         if ((post.imageUrl) != nil) {
-            userUploadImage.image = UIImage(named:post.imageUrl!)
-        }
+            // grab images from the firebase for gallary
+            var imgUrl:NSURL = NSURL(string: post.imageUrl!)!
+            let request:NSURLRequest = NSURLRequest(URL: imgUrl)
+            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
+            let session = NSURLSession(configuration: config)
+            
+            let task = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+                
+                // notice that I can omit the types of data, response and error
+                self.userUploadImage.image = UIImage(data:data!)
+                
+            });
+            
+            // do whatever you need with the task e.g. run
+            task.resume()
         
+        }
     }
-    
+
+
 }
+// NSURLSession's dataTaskWithRequest instead

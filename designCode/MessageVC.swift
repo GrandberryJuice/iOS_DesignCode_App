@@ -51,7 +51,11 @@ class MessageVC: UIViewController, UIImagePickerControllerDelegate, UINavigation
     
     @IBAction func CloseBtn(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: {})
-    
+        
+        if (self.revealViewController() != nil) {
+            self.revealViewController().revealToggleAnimated(true)
+        }
+        
     }
     
     
