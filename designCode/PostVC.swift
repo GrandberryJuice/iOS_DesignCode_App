@@ -10,7 +10,7 @@
 import UIKit
 import Alamofire
 
-class MessageVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PostVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var MessageVCprofileImage: UIImageView!
     @IBOutlet weak var UsermessageText: UITextView!

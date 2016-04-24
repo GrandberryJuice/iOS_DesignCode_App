@@ -25,8 +25,6 @@ class PostCell: UITableViewCell {
     //Alamofire request
     var request:Request?
 
-    
-  
     override func awakeFromNib() {
         super.awakeFromNib()
         let tap = UITapGestureRecognizer(target: self, action: "likeTapped:")
@@ -36,13 +34,8 @@ class PostCell: UITableViewCell {
         
     }
     
-    
-    
-    
-    
     //Circle profile image in tableView
     override func drawRect(rect: CGRect) {
- 
         profileImg.layer.cornerRadius = profileImg.frame.size.width / 2
         profileImg.clipsToBounds = true
         showcaseImg.clipsToBounds = true
@@ -66,15 +59,10 @@ class PostCell: UITableViewCell {
         self.likesLbl.text = "\(post.likes)"
         
             if post.imageUrl != nil {
-            
                 if img != nil {
                     self.showcaseImg.image = img
                 } else {
-                
                     request = Alamofire.request(.GET, post.imageUrl!).validate(contentType:["image/*"]).response(completionHandler: { request, response, data, error in
-                        //check if there is a value
-                        print(data)
- 
                         if error == nil {
                             //do error checking
                             let img = UIImage(data: data!)!
@@ -91,9 +79,6 @@ class PostCell: UITableViewCell {
             } else {
 
         }
-        
-        
-      
         //only called once
         likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
             /*
@@ -108,8 +93,6 @@ class PostCell: UITableViewCell {
         })
     }
     
-    
-
     func likeTapped (sender:UITapGestureRecognizer) {
         //only called once
         likeRef.observeSingleEventOfType(.Value, withBlock: { snapshot in
@@ -118,7 +101,6 @@ class PostCell: UITableViewCell {
             * it comes back as NSNull in FIREBASE
             */
             if let doesNotExist = snapshot.value as? NSNull {
-               
                 self.likeImage.image = UIImage(named: "heart-full")
                 self.post.adjustLikes(true)
                 //set value save the reference and add to firebase
@@ -129,7 +111,6 @@ class PostCell: UITableViewCell {
                     self.likeRef.removeValue()
             }
         })
-    
     }
     
         

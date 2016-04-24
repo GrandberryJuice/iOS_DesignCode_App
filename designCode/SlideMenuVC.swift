@@ -15,7 +15,7 @@ class SlideMenuVC: UIViewController, UITableViewDataSource, UITableViewDelegate 
     
     var menulists = [Menu]()
     var identities = [String]()
-    var messageVC = MessageVC()
+    var postVC = PostVC()
   
     
     

@@ -70,18 +70,14 @@ class ProfileVC: UIViewController, UICollectionViewDelegate, UICollectionViewDat
         let posts = post[indexPath.row]
         
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ProfileCell", forIndexPath: indexPath) as? ProfileCell {
-            
            cell.ConfigureCell(posts)
             return cell
-            
         } else {
-            
             return ProfileCell()
         }
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
         return post.count
     }
     

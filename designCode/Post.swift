@@ -64,6 +64,7 @@ class Post {
             self._postDesc = desc
         }
         
+        //reference to posts
         self._postRef = DataService.ds.REF_POST.childByAppendingPath(self.postKey)
     }
     

@@ -53,16 +53,15 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //called when ever data is changed
         DataService.ds.REF_POST.observeEventType(.Value, withBlock:{ snapshot in
         
-            
             //Grab all snapshots and interate through each
             //snaps hold all data - key:value
             if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
-                
                 for snap in snapshots {
-                    
+                    //post Descritpions and username
                     if let postDict = snap.value as? Dictionary<String, AnyObject> {
-                      let key = snap.key
-                        let post = Post(postKey: key, dictionary: postDict)
+                    
+                    let key = snap.key
+                    let post = Post(postKey: key, dictionary: postDict)
         
                         self.posts.append(post)
                     }
@@ -79,10 +78,8 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         if let cell = tableView.dequeueReusableCellWithIdentifier("PostCell") as? PostCell {
             cell.request?.cancel()
-            
             //create a empty image
             var img:UIImage?
-
             if let url = post.imageUrl {
                 //store the image and cache
                 img = TimeLineVC.imageCache.objectForKey(url) as? UIImage
@@ -90,11 +87,9 @@ class TimeLineVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             //call function in Postcell
             cell.configureCell(post,img:img)
             return cell
-            
         } else {
             return PostCell()
-        }  
-        
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
